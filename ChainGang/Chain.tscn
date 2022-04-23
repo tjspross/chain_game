@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 2.0
+height = 2.0
+
+[node name="Chain" type="Node2D"]
+
+[node name="ChainLink" type="RigidBody2D" parent="."]
+
+[node name="ColShape" type="CollisionShape2D" parent="ChainLink"]
+position = Vector2( 0, 3 )
+shape = SubResource( 1 )
+
+[node name="Joint" type="PinJoint2D" parent="ChainLink/ColShape"]
+position = Vector2( 0, 3 )
