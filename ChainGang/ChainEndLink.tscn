@@ -6,7 +6,9 @@
 radius = 4.0
 
 [node name="ChainEndLink" type="RigidBody2D"]
+position = Vector2( 466, 246 )
 mode = 1
+mass = 0.232653
 
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )

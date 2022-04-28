@@ -12,7 +12,7 @@ func _ready():
 	pass # Replace with function body.
 	
 func _physics_process(delta):
-	var is_moving = Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")
+	var is_moving = Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right")
 	if position.x < 0:
 		position.x = 0
 		is_moving = false
@@ -23,9 +23,9 @@ func _physics_process(delta):
 	if is_moving:
 		speed = MAX_SPEED
 	
-		if Input.is_action_pressed("move_right"):
+		if Input.is_action_pressed("ui_right"):
 			turn_towards(RIGHT)
-		elif Input.is_action_pressed("move_left"):
+		elif Input.is_action_pressed("ui_left"):
 			turn_towards(LEFT)
 		elif Input.is_action_pressed("move_up"):
 			turn_towards(TOP)
@@ -45,7 +45,7 @@ func turn_towards(_direction):
 		pass
 	elif _direction == LEFT:
 		direction = Vector2(-1, 0)
-		get_node("Sprite").set_flip_h(false)
+		# get_node("Sprite").set_flip_h(false)
 	elif _direction == RIGHT:
 		direction = Vector2(1, 0)
-		get_node("Sprite").set_flip_h(true)
+		# get_node("Sprite").set_flip_h(true)
