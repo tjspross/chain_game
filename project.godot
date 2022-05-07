@@ -10,7 +10,6 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
-
 }
 
 [application]
@@ -21,10 +20,19 @@ config/icon="res://icon.png"
 
 [display]
 
+window/size/test_width=2048
+window/size/test_height=1200
 window/dpi/allow_hidpi=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Chain"
+2d_physics/layer_3="Whale"
+
 [rendering]
 
+quality/driver/driver_name="GLES2"
 environment/default_environment="res://default_env.tres"

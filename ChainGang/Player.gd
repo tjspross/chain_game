@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+onready var my_sprite = $Sprite
+
 var direction = Vector2()
 var speed = 0
 var velocity = Vector2()
@@ -16,8 +18,8 @@ func _physics_process(delta):
 	if position.x < 0:
 		position.x = 0
 		is_moving = false
-	elif position.x > 600:
-		position.x = 600
+	elif position.x > get_parent().screen_width:
+		position.x = get_parent().screen_width
 		is_moving=false;
 		
 	if is_moving:
@@ -45,7 +47,7 @@ func turn_towards(_direction):
 		pass
 	elif _direction == LEFT:
 		direction = Vector2(-1, 0)
-		# get_node("Sprite").set_flip_h(false)
+		my_sprite.set_flip_h(true)
 	elif _direction == RIGHT:
 		direction = Vector2(1, 0)
-		# get_node("Sprite").set_flip_h(true)
+		my_sprite.set_flip_h(false)

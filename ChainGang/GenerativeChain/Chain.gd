@@ -1,7 +1,7 @@
 extends Node
 
-var ChainLink = preload("res://ChainGang/ChainLink.tscn")
-var link_length := 20.0
+var ChainLink = preload("res://ChainGang/GenerativeChain/ChainLink.tscn")
+var link_length := 16.0
 var chain_links := []
 var chain_close_tolerance := 4.0
 

@@ -3,10 +3,11 @@
 [ext_resource path="res://icon.png" type="Texture" id=1]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 4.0
+radius = 15.0
 
 [node name="ChainEndLink" type="RigidBody2D"]
-position = Vector2( 466, 246 )
+collision_layer = 2
+collision_mask = 4
 mode = 1
 mass = 0.232653
 
@@ -14,7 +15,8 @@ mass = 0.232653
 shape = SubResource( 1 )
 
 [node name="Joint" type="PinJoint2D" parent="CollisionShape"]
+position = Vector2( 0, 15 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 0.1, 0.1 )
+scale = Vector2( 0.18, 0.18 )
 texture = ExtResource( 1 )
