@@ -5,8 +5,6 @@ extends Node2D
 var Chain = preload("res://ChainGang/SimpleChain/SimpleChainGenerator.tscn")
 var start_pos
 var end_pos := Vector2.ZERO
-
-onready var screen_width = get_viewport().get_visible_rect().size.x
 #want to control the current_link of the SimpleChainGenerator
 #instead of passing control to the next current chain link.
 #Have a controller object that is moved down each time and set to node_b of the pinjoint of the prior link

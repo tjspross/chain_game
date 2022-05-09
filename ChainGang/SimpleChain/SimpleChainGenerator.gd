@@ -27,6 +27,15 @@ func _input(event):
 			#no end pos if we're just generating the chain constantly 
 			#will need a timer to generate the chain slowly enough.
 
+#spawn player_chain
+#create the node that the player can control
+#should be a kinematic body
+#with a pin joint at the top?
+#It's first node_a should be the ship
+#each time a new chain link is spawned, 
+#its position should be moved to beneath the new link
+#it's node_a should be changed to the new link.
+
 func spawn_first_chain_link(position:Vector2):
 	first_link_spawned = true
 	current_link = ChainLink.instance()

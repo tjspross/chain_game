@@ -18,8 +18,8 @@ func _physics_process(delta):
 	if position.x < 0:
 		position.x = 0
 		is_moving = false
-	elif position.x > get_parent().screen_width:
-		position.x = get_parent().screen_width
+	elif position.x > GLOBAL.screen_width:
+		position.x = GLOBAL.screen_width
 		is_moving=false;
 		
 	if is_moving:
