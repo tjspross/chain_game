@@ -1,0 +1,8 @@
+In order to get a controller object at the bottom of the chain that moves the chain around but can't break away from it
+
+1. Create a rigid body that can be controlled by the mouse.
+	a. the movements of the mouse should put forces on the object, but not move it directly.
+	b. the mouse will need to be locked into the play area
+	c. might be easiest to begin with keyboard controls instead of mouse.
+2. attach this body to the bottom of several chain link rigid bodies with pinjoints
+	b. will need to make sure whatever forces can be put on the controller can't overcome the forces of the pinjoints.

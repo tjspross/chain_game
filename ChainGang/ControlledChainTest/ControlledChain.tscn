@@ -1,0 +1,115 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://ChainGang/ControlledChainTest/KinematicBody2D.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+[sub_resource type="CircleShape2D" id=2]
+
+[node name="ControlledChain" type="Node2D"]
+
+[node name="TopAnchor" type="Node2D" parent="."]
+position = Vector2( 0, -218 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TopAnchor"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopAnchor/StaticBody2D"]
+shape = SubResource( 3 )
+
+[node name="PinJoint2D" type="PinJoint2D" parent="TopAnchor/StaticBody2D"]
+position = Vector2( 0, 10 )
+node_a = NodePath("..")
+node_b = NodePath("../../../Link5/RigidBody2D")
+
+[node name="Link" type="Node2D" parent="."]
+position = Vector2( 0, -28 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Link"]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Link/RigidBody2D"]
+shape = SubResource( 1 )
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Link/RigidBody2D"]
+position = Vector2( 0, 20 )
+node_a = NodePath("..")
+node_b = NodePath("../../../Anchor/KinematicBody2D")
+
+[node name="Link2" type="Node2D" parent="."]
+position = Vector2( 0, -68 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Link2"]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Link2/RigidBody2D"]
+shape = SubResource( 1 )
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Link2/RigidBody2D"]
+position = Vector2( 0, 20 )
+node_a = NodePath("..")
+node_b = NodePath("../../../Link/RigidBody2D")
+
+[node name="Link3" type="Node2D" parent="."]
+position = Vector2( 0, -108 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Link3"]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Link3/RigidBody2D"]
+shape = SubResource( 1 )
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Link3/RigidBody2D"]
+position = Vector2( 0, 20 )
+node_a = NodePath("..")
+node_b = NodePath("../../../Link2/RigidBody2D")
+
+[node name="Link4" type="Node2D" parent="."]
+position = Vector2( 0, -148 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Link4"]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Link4/RigidBody2D"]
+shape = SubResource( 1 )
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Link4/RigidBody2D"]
+position = Vector2( 0, 20 )
+node_a = NodePath("..")
+node_b = NodePath("../../../Link3/RigidBody2D")
+
+[node name="Link5" type="Node2D" parent="."]
+position = Vector2( 0, -188 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Link5"]
+collision_layer = 2
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Link5/RigidBody2D"]
+shape = SubResource( 1 )
+
+[node name="PinJoint2D" type="PinJoint2D" parent="Link5/RigidBody2D"]
+position = Vector2( 0, 20 )
+node_a = NodePath("..")
+node_b = NodePath("../../../Link4/RigidBody2D")
+
+[node name="Anchor" type="Node2D" parent="."]
+position = Vector2( 0, 2 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="Anchor"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anchor/RigidBody2D"]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Anchor"]
+position = Vector2( 0, 4.17233e-07 )
+rotation = 0.760963
+scale = Vector2( 0.109375, 0.109375 )
+texture = ExtResource( 1 )

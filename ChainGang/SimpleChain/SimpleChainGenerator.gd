@@ -3,9 +3,9 @@ extends Node2D
 onready var player = get_parent().get_node("Player")
 
 var ChainLink = preload("res://ChainGang/SimpleChain/SimpleChainLink.tscn")
-var link_length := 16.0 #would be preferable to get the actual height of the colision shape through code
+var link_length := 8.0 #would be preferable to get the actual height of the colision shape through code
 var chain_links := []
-var chain_close_tolerance := 2.0
+var chain_close_tolerance := 1
 
 var first_link_spawned = false
 var start_pos
